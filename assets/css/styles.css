@@ -1,0 +1,33 @@
+body {
+    background-color: #26547c;
+    color: #fcfcfc;
+}
+
+.mainTitle {
+    font-size: 4rem !important;
+}
+
+.navbar {
+    background-color: #06D6A0;
+    border-color: rgb(4, 173, 128);
+    border-style: solid;
+    border-width: thick;
+}
+
+.resultContainer {
+    background-color: #ef476f;
+    border-color: #cf3e60;
+    border-style: solid;
+    border-width: thick;
+}
+
+.searchContainer {
+    background-color: #ffd166;
+    border-color: #d8b156;
+    border-style: solid;
+    border-width: thick;
+}
+
+#numResults {
+    width: 7%
+}

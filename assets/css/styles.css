@@ -1,10 +1,14 @@
+html{
+    height: 100%;
+}
+
 body {
     background-color: #26547c;
     color: #fcfcfc;
 }
 
 .mainTitle {
-    font-size: 4rem !important;
+    font-size: 4rem;
 }
 
 .navbar {
@@ -19,6 +23,7 @@ body {
     border-color: #cf3e60;
     border-style: solid;
     border-width: thick;
+    height: 100%;
 }
 
 .searchContainer {
@@ -29,5 +34,14 @@ body {
 }
 
 #numResults {
-    width: 7%
+    width: 45px;
+}
+
+.gifContainer {
+    background-color: #fcfcfc;
+    height: 100%;
+}
+
+.resultTitleRow {
+    padding-top: 1%;
 }

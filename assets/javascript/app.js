@@ -32,7 +32,7 @@ function renderButtons() {
 $(document).on('click', ".search-button", function(){
     var name = $(this).data("character");
     console.log(name);
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=BS5fOBYxxU6oHWjuc6mYRkfGcio43Ih9";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=BS5fOBYxxU6oHWjuc6mYRkfGcio43Ih9";
 
     $.ajax({
         url:queryURL,

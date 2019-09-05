@@ -56,13 +56,12 @@ $(document).on('click', ".search-button", function(){
                 var characterDiv = $("<div>");
                 var p = $("<p>").text("Rating: " + response.data[i].rating);
                 var characterGif = $("<img>");
-                characterGif.attr("src", response.data[i].images.fixed_height.url);
+                characterGif.attr('src',response.data[i].images.fixed_height.url);
                 characterDiv.append(p);
-                characterDiv.append(characterDiv);
+                characterDiv.append(characterGif);
                 console.log(response.data[i].images.fixed_height.url)
-
                 $("#gif-container").append(characterDiv);
-
+                
 
 
 

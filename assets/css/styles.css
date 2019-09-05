@@ -45,3 +45,8 @@ body {
 .resultTitleRow {
     padding-top: 1%;
 }
+
+.pink {
+    height: 200%;
+    overflow: scroll;
+}

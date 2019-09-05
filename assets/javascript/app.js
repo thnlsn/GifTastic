@@ -1,6 +1,8 @@
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
 var searches = ["Superman", "Batman", "Spider-Man"];
 
-
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 $("#generate-button").click(function() {
     event.preventDefault()
@@ -11,22 +13,7 @@ $("#generate-button").click(function() {
     // $("#button-container").prepend("<button data-character=" + '"Superman"' + ">Superman</button>");
 });
 
-
-
-console.log($("#numGifs").val().trim());
-
-
-
-
-
-
-
-
-
-
-
-
-
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 function renderButtons() {
     $("#button-container").empty();
@@ -39,18 +26,7 @@ function renderButtons() {
     }
 };
 
-
-
-function addGifs() {
-    //CODE TO ADD GIFS EQUAL TO THE NUMBER USER INPUTS
-    var amount = $("#numGifs").val();
-    console.log(amount);
-
-    //for (var i = 0; i < amount);
-};
-
-
-
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 // EVENTLISTENR This should applies to all generated buttons
 $(document).on('click', ".search-button", function(){
@@ -58,12 +34,75 @@ $(document).on('click', ".search-button", function(){
     console.log(name);
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=BS5fOBYxxU6oHWjuc6mYRkfGcio43Ih9";
 
-    $.ajax({url:queryURL,method:"GET"})
+    $.ajax({
+        url:queryURL,
+        method:"GET"
+    })
         .done(function(response){
             console.log(response);
+
+            //RUN THE ADDGIFS FUNCTION
+            var amount = $("#numGifs").val();
+            console.log(amount);
+            $("#gif-container").empty();
+        
+            for (var i = 0; i < amount; i++) {
+
+
+                //<div><img src="" alt=""></div>
+
+/*                 $("#gif-container").append(response.data[i].images.fixed_height.url); */
+
+                var characterDiv = $("<div>");
+                var p = $("<p>").text("Rating: " + response.data[i].rating);
+                var characterGif = $("<img>");
+                characterGif.attr("src", response.data[i].images.fixed_height.url);
+                characterDiv.append(p);
+                characterDiv.append(characterDiv);
+                console.log(response.data[i].images.fixed_height.url)
+
+                $("#gif-container").append(characterDiv);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /*                 console.log(response.data[i].url)
+                gifUrl = response.data[i];
+                gif.attr("src", gifUrl);
+                gif.attr("alt", "gif");
+                $("#button-container").prepend(gif); */
+
+/*                 var imageUrl = response.data.image_original_url;
+
+                //
+                var catImage = $("<img>");
+      
+                //
+                catImage.attr("src", imageUrl);
+                catImage.attr("alt", "cat image");
+      
+                //
+                $("#gif-container").prepend(catImage); */
+            }
         });
+        
 });
 
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 
 

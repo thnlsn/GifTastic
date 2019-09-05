@@ -12,8 +12,9 @@
                     <nav class="navbar col-lg-12">
                         <a class="navbar-brand"><h1 class="mainTitle">Giftastic</h1></a>
                         <form class="form-inline my-auto">
-                            <input class="form-control mr-sm-2" type="Generate" placeholder="Generate New Search" aria-label="Generate">
-                            <button class="btn btn-outline-success my-2 my-sm-1 text-center" type="submit">Generate</button>
+                            <input class="form-control mr-sm-2" id="generate-form" type="Generate" placeholder="Generate New Search" aria-label="Generate">
+                            <button class="btn btn-outline-success my-2 my-sm-1 text-center" id="generate-button" type="submit">Generate</button>
+                            <!-- This button must generate buttons -->
                         </form>
                     </nav>                     
             </div>
@@ -26,7 +27,7 @@
                             <h2 class="resultTitle">Results</h2>
                         </div>
                         <div class="col-sm-9">
-                            <select class="form-control" id="numResults">
+                            <select class="form-control" id="numGifs">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -48,9 +49,16 @@
                     </div>
 
                 </div>
-                <div class="col-lg-4 searchContainer">
+                <div class="col-lg-4 searchContainer" id="searches">
                     <h2 class="searchTitle">Your Searches</h2>
+                    <div class="col-lg-12" id="button-container">
+                        <!-- Generated buttons must go here -->
+                    </div>
                 </div>
             </div>
         </div>
+
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="./assets/javascript/app.js"></script>
+    </body>
 </html>
